@@ -6,3 +6,4 @@ up until now have
 Creation
   * singleton
   * FactoryMethod
+  * AbstractFactory

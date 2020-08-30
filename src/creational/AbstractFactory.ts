@@ -126,3 +126,63 @@ console.log(casa1.tv.constructor);
 const casa2 = AbstractFactory2.construtora.montarCasa('rico');
 console.log(casa2.sofa.constructor);
 console.log(casa2.tv.constructor);
+
+module AbstractFactory3 {
+  class Window { }
+  class MenuIcon { }
+
+  class SO {
+    window: Window = new Window()
+
+    menuIcon: MenuIcon = new MenuIcon()
+  }
+  class MacWindow extends Window {}
+  class LinuxWindow extends Window {}
+
+  class MacMenuIcon extends MenuIcon {}
+  class LinuxMenuIcon extends MenuIcon {}
+
+  abstract class SistemaOperacionalFactory {
+    abstract window(): Window
+
+    abstract menuIcon(): MenuIcon
+  }
+
+  class MacOS extends SistemaOperacionalFactory {
+    window(): Window {
+      return new MacWindow();
+    }
+
+    menuIcon(): MenuIcon {
+      return new MacMenuIcon();
+    }
+  }
+
+  class LinuxOS extends SistemaOperacionalFactory {
+    window(): Window {
+      return new LinuxWindow();
+    }
+
+    menuIcon(): MenuIcon {
+      return new LinuxMenuIcon();
+    }
+  }
+
+  export class SistemaOperacional {
+    static instalar(sistema: 'linux' | 'mac'): SO {
+      const sistemaFactory = {
+        linux: new LinuxOS(),
+        mac: new MacOS(),
+      }[sistema];
+      const so = new SO();
+      so.menuIcon = sistemaFactory.window();
+      so.window = sistemaFactory.window();
+      return so;
+    }
+  }
+}
+
+const so1 = AbstractFactory3.SistemaOperacional.instalar('linux');
+console.log(so1.window.constructor);
+const so2 = AbstractFactory3.SistemaOperacional.instalar('mac');
+console.log(so2.window.constructor);
