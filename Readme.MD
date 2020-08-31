@@ -8,3 +8,4 @@ Creation
   * FactoryMethod
   * AbstractFactory
   * Builder
+  * Prototype
