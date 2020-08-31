@@ -7,3 +7,4 @@ Creation
   * singleton
   * FactoryMethod
   * AbstractFactory
+  * Builder
