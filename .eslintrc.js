@@ -21,6 +21,7 @@ module.exports = {
     "no-unused-vars": "off",
     "max-classes-per-file": "off",
     "class-methods-use-this": "off",
-    "import/prefer-default-export": "off"
+    "import/prefer-default-export": "off",
+    "no-use-before-define": "off",
   },
 };
