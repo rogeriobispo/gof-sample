@@ -9,5 +9,6 @@ Creação
   * AbstractFactory
   * Builder
   * Prototype
-EStruturais
+
+Estruturais
   * bridge
