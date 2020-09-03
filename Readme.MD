@@ -3,12 +3,12 @@
 
 up until now have 
 
-Creação
+Criação
   * singleton
   * FactoryMethod
   * AbstractFactory
   * Builder
   * Prototype
-
 Estruturais
   * bridge
+  * Adapter
