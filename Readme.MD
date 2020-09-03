@@ -13,3 +13,4 @@ Estruturais
   * bridge
   * Adapter
   * Proxy
+  * Decorator
