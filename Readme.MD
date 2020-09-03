@@ -12,3 +12,4 @@ Criação
 Estruturais
   * bridge
   * Adapter
+  * Proxy
