@@ -14,3 +14,4 @@ Estruturais
   * Adapter
   * Proxy
   * Decorator
+  * Composite

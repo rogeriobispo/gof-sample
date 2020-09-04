@@ -95,6 +95,7 @@ module Decorator2 {
 
     log(): void {
       this.logger.log();
+      console.log(' Express ');
     }
   }
 
