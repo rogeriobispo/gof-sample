@@ -76,4 +76,93 @@ module Composite1 {
     }
   }
 }
-Composite1.MinhaApp.Main();
+// Composite1.MinhaApp.Main();
+
+module Composite2 {
+  abstract class Person {
+    name!: string
+
+    papel!: string
+
+    constructor(name: string, papel: string) {
+      this.name = name;
+      this.papel = papel;
+    }
+
+    abstract print(): void
+
+    abstract addByers(buyer: Person): void
+
+    abstract listByers(): void;
+  }
+
+  class Seller extends Person {
+    byers: Buyer[] = []
+
+    print(): void {
+      console.log(`Sou ${this.name} e ${this.papel}`);
+      this.listByers();
+    }
+
+    addByers(buyer: Buyer): void {
+      this.byers.push(buyer);
+    }
+
+    listByers() {
+      this.byers.map((buyer) => buyer.print());
+    }
+  }
+
+  class Buyer extends Person {
+    buyers: User[] = []
+
+    print(): void {
+      console.log(`Sou ${this.name} e ${this.papel}`);
+      this.listByers();
+    }
+
+    addByers(buyer: User): void {
+      this.buyers.push(buyer);
+    }
+
+    listByers(): void {
+      this.buyers.map((buyer) => buyer.print());
+    }
+  }
+
+  class User extends Person {
+    print(): void {
+      console.log(`Sou ${this.name} e ${this.papel}`);
+    }
+
+    addByers(buyer: Person): void {
+      console.log('User apenas compra');
+    }
+
+    listByers(): void {
+      throw new Error('User apenas compra');
+    }
+  }
+
+  export class MyApp {
+    static Main() {
+      const user1 = new User('Cliente 1', 'Apenas compro');
+      const user2 = new User('Cliente 2', 'Apenas compro');
+      const user3 = new User('Cliente 3', 'Apenas compro');
+
+      const buyer1 = new Buyer('Comprador 1', 'compro e vendo');
+
+      buyer1.addByers(user1);
+      buyer1.addByers(user2);
+      buyer1.addByers(user3);
+
+      const saller = new Seller('Vendedor', 'apenas vendo');
+      saller.addByers(buyer1);
+
+      saller.print();
+    }
+  }
+
+}
+
+Composite2.MyApp.Main();
