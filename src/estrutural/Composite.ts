@@ -165,4 +165,4 @@ module Composite2 {
 
 }
 
-Composite2.MyApp.Main();
+// Composite2.MyApp.Main();

@@ -15,3 +15,5 @@ Estruturais
   * Proxy
   * Decorator
   * Composite
+  * Facade
+  * Flyweight

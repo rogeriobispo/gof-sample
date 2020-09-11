@@ -23,5 +23,6 @@ module.exports = {
     "class-methods-use-this": "off",
     "import/prefer-default-export": "off",
     "no-use-before-define": "off",
+    "consistent-return": "off",
   },
 };
