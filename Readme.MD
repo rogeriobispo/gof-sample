@@ -17,3 +17,5 @@ Estruturais
   * Composite
   * Facade
   * Flyweight
+Comportamentais
+  * Command
