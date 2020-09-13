@@ -3,13 +3,13 @@
 
 up until now have 
 
-Criação
+## Criação
   * singleton
   * FactoryMethod
   * AbstractFactory
   * Builder
   * Prototype
-Estruturais
+## Estruturais
   * bridge
   * Adapter
   * Proxy
@@ -17,5 +17,5 @@ Estruturais
   * Composite
   * Facade
   * Flyweight
-Comportamentais
+## Comportamentais
   * Command
