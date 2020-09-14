@@ -74,4 +74,50 @@ module Command1 {
  }
 }
 
-Command1.MinhaApp.main();
+// Command1.MinhaApp.main();
+
+module Command2 {
+  interface Command {
+    execute(): void ;
+  }
+
+  class SaveCommand implements Command {
+    execute(): void {
+      console.log('Save command');
+    }
+  }
+
+  class UndoCommand implements Command {
+    execute(): void {
+      console.log('Undo command');
+    }
+  }
+
+  class UpdateCommand implements Command {
+    execute(): void {
+      console.log('Update command');
+    }
+  }
+
+  class ButtonInvoker {
+    command!: Command
+
+    constructor(command: Command) {
+      this.command = command;
+    }
+
+    onButtonPush() {
+      this.command.execute();
+    }
+  }
+
+  export class MyApp {
+    static main() {
+      // eslint-disable-next-line no-new
+      new ButtonInvoker(new UpdateCommand()).onButtonPush();
+      new ButtonInvoker(new SaveCommand()).onButtonPush();
+    }
+  }
+}
+
+Command2.MyApp.main();
