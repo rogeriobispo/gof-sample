@@ -1,7 +1,7 @@
 ## This reppo is just for some samples of 23 gof patterns
 
 
-up until now have 
+up until now have
 
 ## Criação
   * singleton
@@ -19,3 +19,5 @@ up until now have
   * Flyweight
 ## Comportamentais
   * Command
+  * State
+  * strategy
