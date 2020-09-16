@@ -21,3 +21,4 @@ up until now have
   * Command
   * strategy
   * State
+  * Observer
