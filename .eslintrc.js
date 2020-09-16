@@ -24,5 +24,6 @@ module.exports = {
     "import/prefer-default-export": "off",
     "no-use-before-define": "off",
     "consistent-return": "off",
+    "no-plusplus": "off"
   },
 };

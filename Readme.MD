@@ -19,5 +19,5 @@ up until now have
   * Flyweight
 ## Comportamentais
   * Command
-  * State
   * strategy
+  * State

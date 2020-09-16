@@ -65,4 +65,60 @@ module State1 {
  }
 }
 
-State1.MinhaApp.main();
+// State1.MinhaApp.main();
+
+module State2 {
+  interface State {
+    writeName(context: StateContext, name: string): void;
+  }
+
+  class LowerCaseState implements State {
+    writeName(context: StateContext, name: string): void {
+      console.log(name.toLowerCase());
+      context.setState(new MultipleUpperCaseState());
+    }
+  }
+
+  class MultipleUpperCaseState implements State {
+    private count = 0;
+
+    writeName(context: StateContext, name: string): void {
+      console.log(name.toLowerCase());
+      this.count += 1;
+      if (this.count > 1) {
+        context.setState(new LowerCaseState());
+      }
+    }
+  }
+  class StateContext {
+    private state!: State;
+
+    constructor() {
+      this.state = new LowerCaseState();
+    }
+
+    setState(newState: State): void {
+      this.state = newState;
+    }
+
+    writeName(name: string) {
+      this.state.writeName(this, name);
+    }
+  }
+
+  export class MyApp {
+    static main() {
+      const context = new StateContext();
+
+      context.writeName('Monday');
+      context.writeName('Tuesday');
+      context.writeName('Wednesday');
+      context.writeName('Thursday');
+      context.writeName('Friday');
+      context.writeName('Saturday');
+      context.writeName('Sunday');
+    }
+  }
+}
+
+State2.MyApp.main();
