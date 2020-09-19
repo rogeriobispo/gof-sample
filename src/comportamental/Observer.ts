@@ -128,4 +128,86 @@ module Observer1 {
   }
 }
 
-Observer1.MinhaApp.main();
+// Observer1.MinhaApp.main();
+
+module Observer2 {
+  abstract class Observer {
+    id: string = '';
+
+    constructor() {
+      this.id = uuid();
+    }
+
+    abstract update(observerble: Observable, action: string): void;
+  }
+
+  abstract class Observable {
+    observers: Observer[] = []
+
+    changed: boolean = false;
+
+    addObserver(observer: Observer) {
+      this.observers.push(observer);
+    }
+
+    deleteObserver(observer: Observer) {
+      this.observers = this.observers.filter((obs) => obs.id === observer.id);
+    }
+
+    abstract mudarEstado(): void;
+
+    notifyObservers(page: string) {
+      this.observers.map((observer) => observer.update(this, page));
+    }
+
+    setChanged() {
+      this.changed = true;
+    }
+  }
+
+  interface Navegador {
+    acessarPagina(pagina: string): void;
+  }
+
+  class Firefox extends Observable implements Navegador {
+    pagina: string = ''
+
+    observers: Observer[] = [];
+
+    acao: string = ''
+
+    acessarPagina(pagina: string): void {
+      console.log(`Navegador acessou a pagina ${pagina}`);
+      this.pagina = pagina;
+      this.mudarEstado();
+    }
+
+    mudarEstado(): void {
+      this.notifyObservers(this.pagina);
+      this.setChanged();
+    }
+  }
+  class Snifer implements Observer {
+    id: string = '';
+
+    update(_: Observable, pagina: string): void {
+      this.capituraAcesso(pagina);
+    }
+
+    private capituraAcesso(pagina: string) {
+      console.log(`acesso a pagina ${pagina} foi capiturado`);
+    }
+  }
+
+  export class MyApp {
+    static main() {
+      const firefox: Firefox = new Firefox();
+      const hacker: Observer = new Snifer();
+      firefox.addObserver(hacker);
+
+      firefox.acessarPagina('www.google.com.br');
+    }
+  }
+}
+
+Observer2.MyApp.main();
