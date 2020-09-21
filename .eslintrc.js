@@ -24,6 +24,7 @@ module.exports = {
     "import/prefer-default-export": "off",
     "no-use-before-define": "off",
     "consistent-return": "off",
-    "no-plusplus": "off"
+    "no-plusplus": "off",
+    "max-len": [ "error", { "code": 130} ]
   },
 };
