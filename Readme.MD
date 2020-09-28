@@ -22,3 +22,5 @@ up until now have
   * strategy
   * State
   * Observer
+  * mediator
+  * Chain of responsability
