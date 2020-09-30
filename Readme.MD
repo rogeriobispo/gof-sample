@@ -24,3 +24,4 @@ up until now have
   * Observer
   * mediator
   * Chain of responsability
+  * Template

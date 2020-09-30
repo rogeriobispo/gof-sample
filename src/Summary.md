@@ -48,3 +48,5 @@
   * Definir um objeto que encapsula a forma como um conjunto de objetos interage. promove o encapsulamento fraco e evita que objetos se refiram uns aos outros. explicitamente
 ## Chain of responsability
   * executa uma ação e passa para um proximo passo.
+## Templeta Method
+  * visa fornecer um methodo template para uma ação.
