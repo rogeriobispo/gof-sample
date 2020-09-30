@@ -50,3 +50,5 @@
   * executa uma ação e passa para um proximo passo.
 ## Templeta Method
   * visa fornecer um methodo template para uma ação.
+## Interprete
+  * converte de uma linguagem para outra.

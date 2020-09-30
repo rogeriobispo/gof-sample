@@ -25,3 +25,4 @@ up until now have
   * mediator
   * Chain of responsability
   * Template
+  * Interpret
