@@ -26,3 +26,4 @@ up until now have
   * Chain of responsability
   * Template
   * Interpret
+  * Memento

@@ -52,3 +52,6 @@
   * visa fornecer um methodo template para uma ação.
 ## Interprete
   * converte de uma linguagem para outra.
+## Memento
+  * sem violar o encapsulamento, caputar e externalizar um estado interno de um objeto,
+  de maneira que o objeto possa ser restuarado para este estado mais tarde.
